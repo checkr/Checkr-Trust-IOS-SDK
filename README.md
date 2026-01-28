@@ -2,7 +2,7 @@
 
 - Xcode → **File → Add Package Dependencies…**
 - paste this package's URL (https://github.com/checkr/Checkr-Trust-IOS-SDK)
-- select a version (SemVer tag)
+- also add [ZipFoundation](https://github.com/weichsel/ZIPFoundation) as a dependency if your project doesn't already include it
 
 ## What this repo contains
 
