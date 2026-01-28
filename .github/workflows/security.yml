@@ -15,7 +15,7 @@ jobs:
       contents: read
     uses: checkr/workflows-public/.github/workflows/security-full.yml@main
     with:
-      product: 'Checkr Trust'
+      product: 'checkr trust'
       run-sast: true
       run-secrets: true
       run-dependencies: true
