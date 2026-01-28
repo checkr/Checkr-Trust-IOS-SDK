@@ -6,7 +6,8 @@ on:
   pull_request:
   schedule:
     - cron: '0 2 * * 1'  # Weekly on Mondays at 2 AM UTC
-          
+    
+jobs:         
   security:
     name: Complete Security Scan
     permissions:
