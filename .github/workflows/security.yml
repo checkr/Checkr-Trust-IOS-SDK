@@ -1,0 +1,24 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly on Mondays at 2 AM UTC
+
+jobs:
+  security:
+    name: Complete Security Scan
+    permissions:
+      security-events: write
+      contents: read
+    uses: checkr/.github/.github/workflows/security-full.yml@main
+    with:
+      product: 'Checkr Trust'
+      run-sast: true
+      run-secrets: true
+      run-dependencies: true
+      run-iac: true
+    secrets:
+      ARMORCODE_API_KEY: ${{ secrets.CHECKR_GITHUB_SCAN_UPLOAD_ARMORCODE_KEY }}
