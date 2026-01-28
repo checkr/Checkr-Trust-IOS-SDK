@@ -13,7 +13,7 @@ jobs:
     permissions:
       security-events: write
       contents: read
-    uses: checkr/.github/.github/workflows/security-full.yml@main
+    uses: checkr/workflows-public/.github/workflows/security-full.yml@main
     with:
       product: 'Checkr Trust'
       run-sast: true
