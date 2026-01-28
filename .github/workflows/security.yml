@@ -8,6 +8,18 @@ on:
     - cron: '0 2 * * 1'  # Weekly on Mondays at 2 AM UTC
 
 jobs:
+  debug-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check that org secret is visible
+        run: |
+          if [ -z "${{ secrets.CHECKR_GITHUB_SCAN_UPLOAD_ARMORCODE_KEY }}" ]; then
+            echo "CHECKR_GITHUB_SCAN_UPLOAD_ARMORCODE_KEY is NOT available in this workflow."
+            exit 1
+          else
+            echo "CHECKR_GITHUB_SCAN_UPLOAD_ARMORCODE_KEY *is* available (value is masked)."
+          fi
+          
   security:
     name: Complete Security Scan
     permissions:
